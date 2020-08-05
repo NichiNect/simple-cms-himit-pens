@@ -22,12 +22,14 @@
 <body>
     <div id="app">
 
-        @include('layouts.navigation')
+        @include('layouts.partials.navigation')
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+
+    @include('layouts.partials.footer')
 
     <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
     @yield('scriptjs')

@@ -26,3 +26,11 @@ Route::get('/articles/{article:slug}/edit-article', 'ArticleController@edit')->n
 Route::put('/articles/{article}/edit-article', 'ArticleController@update')->name('articles.update');
 
 Route::delete('/articles{article:slug}/delete-article', 'ArticleController@destroy')->name('articles.destroy');
+
+Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function() {
+	Route::get('/admin/dashboard', 'DashboardController@index')->name('admin.dashboard.index');
+});
+
+Route::get('/asd', function() {
+	return view('layouts.admin');
+});

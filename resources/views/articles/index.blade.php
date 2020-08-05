@@ -32,6 +32,8 @@
 					<div class="col-md">
 						{!! Str::limit($article->content, 100) !!}
 						<a href="{{ route('articles.show', $article) }}">Read more..</a>
+						<br>
+						<small class="text-muted">Last Updated : {{ $article->updated_at }}</small>
 					</div>
 					@else
 					<div class="col-md-4">
@@ -40,7 +42,9 @@
 					<div class="col-md-8">
 						{!! Str::limit($article->content, 100) !!}
 						<a href="{{ route('articles.show', $article) }}">Read more..</a>
+						<br>
 					</div>
+					<small class="text-muted ml-3">Last Updated : {{ $article->updated_at }}</small>
 					@endif
 				</div>
 			</div>
