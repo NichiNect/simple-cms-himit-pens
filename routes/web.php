@@ -37,6 +37,8 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function() {
 	Route::get('/admin/user-management/{id}/edit', 'UserAdminController@edit')->name('admin.users.edit');
 	Route::patch('/admin/user-management/{id}/edit', 'UserAdminController@update')->name('admin.users.update');
 	Route::delete('/admin/user-management/{id}/delete', 'UserAdminController@destroy')->name('admin.users.destroy');
+	// article management
+	Route::get('/admin/article-management', 'ArticleAdminController@index')->name('admin.articles.index');
 });
 
 Route::get('/asd', function() {

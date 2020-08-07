@@ -17,7 +17,7 @@ class UserAdminController extends Controller
     {
         $admin = User::where('role', 'admin')->count();
         $user = User::where('role', 'user')->count();
-        $users = USer::paginate(10);
+        $users = User::paginate(10);
 
         return view('admin.user.index', compact('admin', 'user', 'users'));
     }

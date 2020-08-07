@@ -11,6 +11,13 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        $users = factory('App\User', 5)->create();
+    	$userInti = \App\User::create([
+    		'name' => 'Yoni Widhi', 
+    		'role' => 'admin', 
+    		'email' => 'admin@admin.com', 
+    		'password' => bcrypt('thispassword')
+    	]);
+
+        $users = factory('App\User', 4)->create();
     }
 }
