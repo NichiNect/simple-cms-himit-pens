@@ -19,7 +19,7 @@
 		<div class="col-lg-8">
 			<h3>{{ $article->judul }}</h3>
 			<small>
-				Posted by : <i>{{ $article->user_id }}</i>
+				Posted by : <i>{{ $article->user->name }}</i>
 				<br>
 				Last updated : <i>{{ $article->updated_at->diffForHumans() }}, at {{ $article->updated_at }}</i>
 			</small>

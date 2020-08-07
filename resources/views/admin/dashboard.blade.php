@@ -6,6 +6,11 @@
 
 @section('content')
 <div class="row">
+    <div class="col-lg">
+        <h1>Dashboard</h1>
+    </div>
+</div>
+<div class="row">
     <div class="col-md-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">

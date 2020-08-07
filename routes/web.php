@@ -28,7 +28,15 @@ Route::put('/articles/{article}/edit-article', 'ArticleController@update')->name
 Route::delete('/articles{article:slug}/delete-article', 'ArticleController@destroy')->name('articles.destroy');
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function() {
+	// dashboard
 	Route::get('/admin/dashboard', 'DashboardController@index')->name('admin.dashboard.index');
+	// user management
+	Route::get('/admin/user-management', 'UserAdminController@index')->name('admin.users.index');
+	Route::get('/admin/user-management/new', 'UserAdminController@create')->name('admin.users.create');
+	Route::post('/admin/user-management/new', 'UserAdminController@store')->name('admin.users.store');
+	Route::get('/admin/user-management/{id}/edit', 'UserAdminController@edit')->name('admin.users.edit');
+	Route::patch('/admin/user-management/{id}/edit', 'UserAdminController@update')->name('admin.users.update');
+	Route::delete('/admin/user-management/{id}/delete', 'UserAdminController@destroy')->name('admin.users.destroy');
 });
 
 Route::get('/asd', function() {
